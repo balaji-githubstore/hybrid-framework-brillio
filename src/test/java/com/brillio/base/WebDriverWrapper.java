@@ -12,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class WebDriverWrapper {
 
 	protected WebDriver driver;
-
+	
 	@BeforeMethod
 	public void setup() {
 		WebDriverManager.chromedriver().setup();

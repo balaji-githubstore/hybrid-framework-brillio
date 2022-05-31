@@ -1,6 +1,7 @@
 package com.brillio.test;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,14 +9,28 @@ import com.brillio.base.WebDriverWrapper;
 
 public class LoginTest extends WebDriverWrapper {
 	
+	//create dataprovider and connect to test method
+//	admin,pass,English (Indian),OpenEMR
+//	physician,physician,Dutch,OpenEMR
+	
+//	public String[][] validCredentialData()
+//	{
+//		
+//	}
+	
 	@Test
-	public void validCredentialTest() {
-		driver.findElement(By.id("authUser")).sendKeys("admin");
-		driver.findElement(By.id("clearPass")).sendKeys("pass");
+	public void validCredentialTest(String username,String password,String language,String expectedTitle) {
+		
+		driver.findElement(By.id("authUser")).sendKeys(username);
+		driver.findElement(By.id("clearPass")).sendKeys(password);
+		
+		Select selectLan=new Select(driver.findElement(By.xpath("//select[@name='languageChoice']")));
+		selectLan.selectByVisibleText(language);
+		
 		driver.findElement(By.cssSelector("#login-button")).click();
 
 		String actualTitle = driver.getTitle();
-		Assert.assertEquals(actualTitle, "OpenEMR");
+		Assert.assertEquals(actualTitle, expectedTitle);
 	}
 	
 	@Test
