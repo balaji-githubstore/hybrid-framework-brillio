@@ -3,6 +3,7 @@ package com.brillio.test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.brillio.base.WebDriverWrapper;
@@ -13,10 +14,7 @@ public class LoginTest extends WebDriverWrapper {
 //	admin,pass,English (Indian),OpenEMR
 //	physician,physician,Dutch,OpenEMR
 	
-//	public String[][] validCredentialData()
-//	{
-//		
-//	}
+	
 	
 	@Test
 	public void validCredentialTest(String username,String password,String language,String expectedTitle) {
