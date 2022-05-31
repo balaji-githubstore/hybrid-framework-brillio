@@ -13,31 +13,30 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTest {
+	WebDriver driver;
 	
 	@BeforeMethod
 	public void setup()
 	{
-		System.out.println("before method");
+		WebDriverManager.chromedriver().setup();
+
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+		driver.get("https://demo.openemr.io/b/openemr");
 	}
 	
 	@AfterMethod
 	public void teardown()
 	{
-		System.out.println("After Method");
+		driver.quit();
 	}
 	
-	//will start at 10:45 AM IST
-
+	
 	@Test
 	public void validCredentialTest() {
-		WebDriverManager.chromedriver().setup();
-
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-		driver.get("https://demo.openemr.io/b/openemr");
-
+		
 		driver.findElement(By.id("authUser")).sendKeys("admin");
 		driver.findElement(By.id("clearPass")).sendKeys("pass");
 		driver.findElement(By.cssSelector("#login-button")).click();
@@ -49,14 +48,6 @@ public class LoginTest {
 	@Test
 	public void invalidCredentialTest()
 	{
-		WebDriverManager.chromedriver().setup();
-
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-		driver.get("https://demo.openemr.io/b/openemr");
-
 		driver.findElement(By.id("authUser")).sendKeys("john");
 		driver.findElement(By.id("clearPass")).sendKeys("john123");
 		driver.findElement(By.cssSelector("#login-button")).click();
