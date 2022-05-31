@@ -30,6 +30,25 @@ public class LoginTest {
 		Assert.assertEquals(actualTitle, "OpenEMR");
 	}
 	
+	@Test
+	public void invalidCredentialTest()
+	{
+		WebDriverManager.chromedriver().setup();
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+		driver.get("https://demo.openemr.io/b/openemr");
+
+		driver.findElement(By.id("authUser")).sendKeys("john");
+		driver.findElement(By.id("clearPass")).sendKeys("john123");
+		driver.findElement(By.cssSelector("#login-button")).click();
+		
+		String actualError=driver.findElement(By.xpath("//div[contains(text(),'Invalid')]")).getText().strip();
+		
+		Assert.assertEquals(actualError, "Invalid username or password");
+	}
 	
 	
 }
