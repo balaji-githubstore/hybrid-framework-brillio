@@ -7,28 +7,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.brillio.base.WebDriverWrapper;
+import com.brillio.utilities.DataUtils;
 
 public class LoginTest extends WebDriverWrapper {
 	
-	@DataProvider
-	public Object[][] validCredentialData()
-	{
-		Object[][] main=new Object[2][4];
-		
-		main[0][0]="admin";
-		main[0][1]="pass";
-		main[0][2]="English (Indian)";
-		main[0][3]="OpenEMR";
-		
-		main[1][0]="physician";
-		main[1][1]="physician";
-		main[1][2]="Dutch";
-		main[1][3]="OpenEMR";
-		
-		return main;
-	}
-	
-	@Test(dataProvider = "validCredentialData")
+	@Test(dataProviderClass = DataUtils.class,dataProvider = "validCredentialData")
 	public void validCredentialTest(String username,String password,String language,String expectedTitle) {
 		
 		driver.findElement(By.id("authUser")).sendKeys(username);
