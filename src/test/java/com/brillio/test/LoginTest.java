@@ -3,7 +3,6 @@ package com.brillio.test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.brillio.base.WebDriverWrapper;
@@ -26,7 +25,7 @@ public class LoginTest extends WebDriverWrapper {
 		Assert.assertEquals(actualTitle, expectedTitle);
 	}
 	
-	@Test
+	@Test(dataProviderClass = DataUtils.class,dataProvider = "invalidCredentialData")
 	public void invalidCredentialTest(String username,String password,String language,String expectedError)
 	{
 		driver.findElement(By.id("authUser")).sendKeys(username);
