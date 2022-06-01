@@ -23,15 +23,18 @@ public class ExcelDemo {
 		DataFormatter format = new DataFormatter();
 		
 		Object[][] main=new Object[rowCount-1][cellCount];
+		
 
-		for (int r = 1; r < rowCount; r++) 
+		for(int row=1;row<rowCount;row++)
 		{
-			for (int c = 0; c < cellCount; c++) 
+			for(int cell=0;cell<cellCount;cell++)
 			{
-				String value = format.formatCellValue(sheet.getRow(r).getCell(c));
-				main[r-1][c]=value;
-			}
+				String value = format.formatCellValue(sheet.getRow(row).getCell(cell));
+				System.out.println(value);
+				main[row-1][cell]=value;
+			}	
 		}
+		
 		System.out.println();
 	}
 }
