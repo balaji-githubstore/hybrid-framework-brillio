@@ -17,7 +17,7 @@ public class WebDriverWrapper {
 	public void setup() {
 		WebDriverManager.chromedriver().setup();
 
-		driver = new ChromeDriver();
+		this.driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
