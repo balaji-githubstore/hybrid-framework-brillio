@@ -27,14 +27,18 @@ public class LoginTest extends WebDriverWrapper {
 	}
 	
 	@Test
-	public void invalidCredentialTest()
+	public void invalidCredentialTest(String username,String password,String language,String expectedError)
 	{
-		driver.findElement(By.id("authUser")).sendKeys("john");
-		driver.findElement(By.id("clearPass")).sendKeys("john123");
+		driver.findElement(By.id("authUser")).sendKeys(username);
+		driver.findElement(By.id("clearPass")).sendKeys(password);
+		
+		Select selectLan=new Select(driver.findElement(By.xpath("//select[@name='languageChoice']")));
+		selectLan.selectByVisibleText(language);
+		
 		driver.findElement(By.cssSelector("#login-button")).click();
 		
 		String actualError=driver.findElement(By.xpath("//div[contains(text(),'Invalid')]")).getText().strip();
-		Assert.assertEquals(actualError, "Invalid username or password");
+		Assert.assertEquals(actualError, expectedError);
 	}
 	
 	
