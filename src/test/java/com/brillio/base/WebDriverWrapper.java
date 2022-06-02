@@ -4,6 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -15,9 +17,27 @@ public class WebDriverWrapper {
 	
 	@BeforeMethod
 	public void setup() {
-		WebDriverManager.chromedriver().setup();
-
-		this.driver = new ChromeDriver();
+		
+		String browser="edge";
+		
+		if(browser.equalsIgnoreCase("edge"))
+		{
+			WebDriverManager.edgedriver().setup();
+			driver=new EdgeDriver();
+		}
+		else if(browser.equalsIgnoreCase("ff"))
+		{
+			WebDriverManager.firefoxdriver().setup();
+			driver=new FirefoxDriver();
+		}
+		else
+		{
+			WebDriverManager.chromedriver().setup();
+			this.driver = new ChromeDriver();
+		}
+		
+		
+		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
