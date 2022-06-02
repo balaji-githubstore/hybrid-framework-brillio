@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import com.brillio.base.WebDriverWrapper;
+import com.brillio.pages.LoginPage;
 import com.brillio.utilities.DataUtils;
 
 public class PatientTest extends WebDriverWrapper {
@@ -12,8 +13,8 @@ public class PatientTest extends WebDriverWrapper {
 	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
 	public void addPatientTest(String username,String password,String language,String firstname,String lastname,String dob,String gender,String expectedAlert,String expectedValue)
 	{
-		driver.findElement(By.id("authUser")).sendKeys(username);
-		driver.findElement(By.id("clearPass")).sendKeys(password);
+		LoginPage.enterUsername(driver, username);
+		LoginPage.enterPassword(driver, password);
 		
 		Select selectLan=new Select(driver.findElement(By.xpath("//select[@name='languageChoice']")));
 		selectLan.selectByVisibleText(language);

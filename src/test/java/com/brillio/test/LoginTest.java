@@ -7,18 +7,18 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 import com.brillio.base.WebDriverWrapper;
+import com.brillio.pages.LoginPage;
 import com.brillio.utilities.DataUtils;
 
 public class LoginTest extends WebDriverWrapper {
 	
-		
 	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
 	public void validCredentialTest(String username,String password,String language,String expectedTitle) {
 		
-		driver.findElement(By.id("authUser")).sendKeys(username);
+		LoginPage.enterUsername(driver, username);
 		test.log(Status.INFO, "Enter Username as "+username);
 		
-		driver.findElement(By.id("clearPass")).sendKeys(password);
+		LoginPage.enterPassword(driver, password);
 		test.log(Status.INFO, "Enter Password as "+password);
 		
 		Select selectLan=new Select(driver.findElement(By.xpath("//select[@name='languageChoice']")));
@@ -40,9 +40,9 @@ public class LoginTest extends WebDriverWrapper {
 	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
 	public void invalidCredentialTest(String username,String password,String language,String expectedError)
 	{
-		driver.findElement(By.id("authUser")).sendKeys(username);
-		driver.findElement(By.id("clearPass")).sendKeys(password);
-		
+		LoginPage.enterUsername(driver, username);
+		LoginPage.enterPassword(driver, password);
+
 		Select selectLan=new Select(driver.findElement(By.xpath("//select[@name='languageChoice']")));
 		selectLan.selectByVisibleText(language);
 		
