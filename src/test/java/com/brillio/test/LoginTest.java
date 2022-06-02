@@ -10,6 +10,7 @@ import com.brillio.utilities.DataUtils;
 
 public class LoginTest extends WebDriverWrapper {
 	
+		
 	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
 	public void validCredentialTest(String username,String password,String language,String expectedTitle) {
 		
