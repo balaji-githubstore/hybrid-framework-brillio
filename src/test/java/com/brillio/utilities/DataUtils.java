@@ -1,22 +1,34 @@
 package com.brillio.utilities;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 import org.testng.annotations.DataProvider;
 
 public class DataUtils {
-
+	
 	@DataProvider
-	public Object[][] invalidCredentialData() throws IOException {
-		Object[][] main = ExcelUtils.getSheetIntoTwoDimArray("test-data/orange_data.xlsx", "invalidCredentialTest");
+	public Object[][] commonDataProvider(Method method) throws IOException {
+		
+		//current test method name is the sheetname
+		String testMethodName=method.getName();
+		
+		Object[][] main = ExcelUtils.getSheetIntoTwoDimArray("test-data/orange_data.xlsx", testMethodName);
 		return main;
 	}
 
-	@DataProvider
-	public Object[][] validCredentialData() throws IOException {
-		Object[][] main = ExcelUtils.getSheetIntoTwoDimArray("test-data/orange_data.xlsx", "validCredentialTest");
-		return main;
-	}
+//	@DataProvider
+//	public Object[][] invalidCredentialData() throws IOException {
+//		
+//		Object[][] main = ExcelUtils.getSheetIntoTwoDimArray("test-data/orange_data.xlsx", "invalidCredentialTest");
+//		return main;
+//	}
+//
+//	@DataProvider
+//	public Object[][] validCredentialData() throws IOException {
+//		Object[][] main = ExcelUtils.getSheetIntoTwoDimArray("test-data/orange_data.xlsx", "validCredentialTest");
+//		return main;
+//	}
 
 //	@DataProvider
 //	public Object[][] validCredentialData()
