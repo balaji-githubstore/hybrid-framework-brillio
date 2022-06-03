@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //handle all the menu - openemr dashboard page
 public class MainPage {
 	
-	
 	public static void waitForPresenceOfPatientMenu(WebDriver driver)
 	{
 		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(50));
