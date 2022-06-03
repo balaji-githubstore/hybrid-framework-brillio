@@ -7,7 +7,7 @@ import com.brillio.base.WebDriverWrapper;
 	
 public class LoginUITest extends WebDriverWrapper {
 	
-	@Test
+	@Test(groups = {"low"})
 	public void validateTitleTest()
 	{
 		Assert.assertEquals(driver.getTitle(), "OpenEMR Login");

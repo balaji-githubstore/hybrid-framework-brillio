@@ -29,23 +29,26 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class WebDriverWrapper {
 
 	protected WebDriver driver;
-	private ExtentReports extent;
+	private static ExtentReports extent;
 	protected ExtentTest test;
 
-	@BeforeSuite
+	@BeforeSuite(alwaysRun = true)
 	public void init() {
-		ExtentSparkReporter reporter = new ExtentSparkReporter("target/spark.html");
+		if(extent==null)
+		{
+			ExtentSparkReporter reporter = new ExtentSparkReporter("target/spark.html");
 
-		extent = new ExtentReports();
-		extent.attachReporter(reporter);
+			extent = new ExtentReports();
+			extent.attachReporter(reporter);
+		}
 	}
 
-	@AfterSuite
+	@AfterSuite(alwaysRun = true)
 	public void end() {
 		extent.flush();
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	@Parameters({ "browser" })
 	public void setup(@Optional("ch") String browserName, Method method) {
 
@@ -68,7 +71,7 @@ public class WebDriverWrapper {
 		driver.get("https://demo.openemr.io/b/openemr");
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void teardown(ITestResult result) {
 
 		if (result.getStatus() == ITestResult.FAILURE) {

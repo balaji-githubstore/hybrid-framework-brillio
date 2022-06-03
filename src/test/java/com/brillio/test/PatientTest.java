@@ -10,7 +10,7 @@ import com.brillio.utilities.DataUtils;
 
 public class PatientTest extends WebDriverWrapper {
 
-	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider")
+	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider",groups = {"high","patient"})
 	public void addPatientTest(String username,String password,String language,String firstname,String lastname,String dob,String gender,String expectedAlert,String expectedValue)
 	{
 		LoginPage.enterUsername(driver, username);
