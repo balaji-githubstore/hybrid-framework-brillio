@@ -53,6 +53,7 @@ public class WebDriverWrapper {
 	public void setup(@Optional("ch") String browserName, Method method) {
 
 		test = extent.createTest(method.getName());
+		
 
 		if (browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();

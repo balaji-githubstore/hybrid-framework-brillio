@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 import com.brillio.base.WebDriverWrapper;
 import com.brillio.pages.LoginPage;
+import com.brillio.pages.MainPage;
+import com.brillio.pages.SearchOrAddPatientPage;
 import com.brillio.utilities.DataUtils;
 
 public class PatientTest extends WebDriverWrapper {
@@ -18,6 +20,15 @@ public class PatientTest extends WebDriverWrapper {
 		LoginPage.selectLanguageByText(driver, language);
 		LoginPage.clickOnLogin(driver);
 		
+		MainPage.clickOnPatient(driver);
+		MainPage.clickOnNewSearch(driver);
+		
+		SearchOrAddPatientPage.selectPatFrame(driver);
+		SearchOrAddPatientPage.enterFirstName(driver, firstname);
+		
+		
+		String actualAlertText=SearchOrAddPatientPage.getAlertTextAndHandleIt(driver);
+		
 		//complete remaining steps 
 //		6.	Click on Patient  Click New Search
 //		7.	Add the first name, last name
@@ -29,6 +40,8 @@ public class PatientTest extends WebDriverWrapper {
 //		13.	Handle alert
 //		14.	Close the Happy Birthday popup
 //		15.	Get the added patient name and assert it
+		
+		
 
 	}
 }
