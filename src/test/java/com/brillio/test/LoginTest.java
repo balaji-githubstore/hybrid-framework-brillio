@@ -1,13 +1,18 @@
 package com.brillio.test;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 import com.brillio.base.WebDriverWrapper;
 import com.brillio.pages.LoginPage;
+import com.brillio.pages.MainPage;
 import com.brillio.utilities.DataUtils;
 
 public class LoginTest extends WebDriverWrapper {
@@ -21,17 +26,15 @@ public class LoginTest extends WebDriverWrapper {
 		LoginPage.enterPassword(driver, password);
 		test.log(Status.INFO, "Enter Password as "+password);
 		
-		Select selectLan=new Select(driver.findElement(By.xpath("//select[@name='languageChoice']")));
-		selectLan.selectByVisibleText(language);
-		
+		LoginPage.selectLanguageByText(driver, language);
 		test.log(Status.INFO, "Selected Lanaguage as "+language);
 		
-		driver.findElement(By.cssSelector("#login-button")).click();
-		
+		LoginPage.clickOnLogin(driver);
 		test.log(Status.INFO, "Clicked on login ");
-
-		String actualTitle = driver.getTitle();
 		
+		MainPage.waitForPresenceOfPatientMenu(driver);
+
+		String actualTitle = MainPage.getMainPageTitle(driver);
 		test.log(Status.INFO, "Title is "+actualTitle);
 		
 		Assert.assertEquals(actualTitle, expectedTitle);
@@ -42,13 +45,10 @@ public class LoginTest extends WebDriverWrapper {
 	{
 		LoginPage.enterUsername(driver, username);
 		LoginPage.enterPassword(driver, password);
-
-		Select selectLan=new Select(driver.findElement(By.xpath("//select[@name='languageChoice']")));
-		selectLan.selectByVisibleText(language);
+		LoginPage.selectLanguageByText(driver, language);
+		LoginPage.clickOnLogin(driver);
 		
-		driver.findElement(By.cssSelector("#login-button")).click();
-		
-		String actualError=driver.findElement(By.xpath("//div[contains(text(),'Invalid')]")).getText().strip();
+		String actualError=LoginPage.getInvalidErrorMessage(driver);
 		Assert.assertEquals(actualError, expectedError);
 	}
 	

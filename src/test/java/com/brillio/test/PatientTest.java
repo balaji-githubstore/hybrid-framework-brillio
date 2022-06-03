@@ -15,11 +15,8 @@ public class PatientTest extends WebDriverWrapper {
 	{
 		LoginPage.enterUsername(driver, username);
 		LoginPage.enterPassword(driver, password);
-		
-		Select selectLan=new Select(driver.findElement(By.xpath("//select[@name='languageChoice']")));
-		selectLan.selectByVisibleText(language);
-		
-		driver.findElement(By.cssSelector("#login-button")).click();
+		LoginPage.selectLanguageByText(driver, language);
+		LoginPage.clickOnLogin(driver);
 		
 		//complete remaining steps 
 //		6.	Click on Patient  Click New Search

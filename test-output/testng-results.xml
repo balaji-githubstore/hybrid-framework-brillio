@@ -1,61 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="14" passed="8" failed="0" skipped="0">
+<testng-results ignored="1" total="3" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-03T09:19:23 IST" name="OpenEMR Suite" finished-at="2022-06-03T09:21:45 IST" duration-ms="142211">
+  <suite started-at="2022-06-03T10:10:55 IST" name="Default suite" finished-at="2022-06-03T10:14:19 IST" duration-ms="203396">
     <groups>
       <group name="low">
-        <method signature="LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" name="invalidCredentialTest" class="com.brillio.test.LoginTest"/>
-        <method signature="LoginUITest.validateTitleTest()[pri:0, instance:com.brillio.test.LoginUITest@f09733f]" name="validateTitleTest" class="com.brillio.test.LoginUITest"/>
+        <method signature="LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@18df8434]" name="invalidCredentialTest" class="com.brillio.test.LoginTest"/>
       </group> <!-- low -->
       <group name="login">
-        <method signature="LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" name="invalidCredentialTest" class="com.brillio.test.LoginTest"/>
+        <method signature="LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@18df8434]" name="invalidCredentialTest" class="com.brillio.test.LoginTest"/>
       </group> <!-- login -->
     </groups>
-    <test started-at="2022-06-03T09:19:23 IST" name="Open EMR Test - CH" finished-at="2022-06-03T09:21:45 IST" duration-ms="142211">
-      <class name="com.brillio.test.LoginUITest">
-        <test-method is-config="true" signature="init()[pri:0, instance:com.brillio.test.LoginUITest@f09733f]" started-at="2022-06-03T09:19:20 IST" name="init" finished-at="2022-06-03T09:19:23 IST" duration-ms="2791" status="PASS">
+    <test started-at="2022-06-03T10:10:55 IST" name="Default test" finished-at="2022-06-03T10:14:19 IST" duration-ms="203396">
+      <class name="com.brillio.test.LoginTest">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.brillio.test.LoginTest@18df8434]" started-at="2022-06-03T10:10:48 IST" name="init" finished-at="2022-06-03T10:10:55 IST" duration-ms="7249" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginUITest@f09733f]" started-at="2022-06-03T09:19:23 IST" name="setup" finished-at="2022-06-03T09:19:44 IST" duration-ms="20814" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ch]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public void com.brillio.test.LoginUITest.validateTitleTest()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="validateTitleTest()[pri:0, instance:com.brillio.test.LoginUITest@f09733f]" started-at="2022-06-03T09:19:44 IST" name="validateTitleTest" finished-at="2022-06-03T09:19:47 IST" duration-ms="3256" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateTitleTest -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginUITest@f09733f]" started-at="2022-06-03T09:19:47 IST" name="teardown" finished-at="2022-06-03T09:19:52 IST" duration-ms="4497" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validateTitleTest status=SUCCESS method=LoginUITest.validateTitleTest()[pri:0, instance:com.brillio.test.LoginUITest@f09733f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="end()[pri:0, instance:com.brillio.test.LoginUITest@f09733f]" started-at="2022-06-03T09:21:45 IST" name="end" finished-at="2022-06-03T09:21:48 IST" duration-ms="3152" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- end -->
-      </class> <!-- com.brillio.test.LoginUITest -->
-      <class name="com.brillio.test.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:19:53 IST" name="setup" finished-at="2022-06-03T09:20:01 IST" duration-ms="8501" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@18df8434]" started-at="2022-06-03T10:11:25 IST" name="setup" finished-at="2022-06-03T10:11:36 IST" duration-ms="11394" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -71,7 +33,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:01 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T09:20:06 IST" duration-ms="4638" status="PASS">
+        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@18df8434]" started-at="2022-06-03T10:11:36 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T10:13:29 IST" duration-ms="113011" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -97,18 +59,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidCredentialTest -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:06 IST" name="teardown" finished-at="2022-06-03T09:20:14 IST" duration-ms="8480" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@18df8434]" started-at="2022-06-03T10:13:29 IST" name="teardown" finished-at="2022-06-03T10:13:44 IST" duration-ms="14606" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54] output={null}]]]>
+                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@18df8434] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:14 IST" name="setup" finished-at="2022-06-03T09:20:23 IST" duration-ms="8693" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@18df8434]" started-at="2022-06-03T10:13:44 IST" name="setup" finished-at="2022-06-03T10:13:51 IST" duration-ms="7626" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -124,7 +86,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:23 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T09:20:27 IST" duration-ms="4024" status="PASS">
+        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@18df8434]" started-at="2022-06-03T10:13:51 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T10:14:14 IST" duration-ms="22535" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -150,283 +112,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidCredentialTest -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:27 IST" name="teardown" finished-at="2022-06-03T09:20:30 IST" duration-ms="3030" status="PASS">
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@18df8434]" started-at="2022-06-03T10:14:14 IST" name="teardown" finished-at="2022-06-03T10:14:19 IST" duration-ms="4839" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54] output={null}]]]>
+                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@18df8434] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:30 IST" name="setup" finished-at="2022-06-03T09:20:37 IST" duration-ms="6871" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ch]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public void com.brillio.test.LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
+        <test-method is-config="true" signature="end()[pri:0, instance:com.brillio.test.LoginTest@18df8434]" started-at="2022-06-03T10:14:19 IST" name="end" finished-at="2022-06-03T10:14:22 IST" duration-ms="2948" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:37 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T09:20:40 IST" duration-ms="3489" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Kign]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[John125]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[English (Indian)]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Invalid username or password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidCredentialTest -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:40 IST" name="teardown" finished-at="2022-06-03T09:20:43 IST" duration-ms="2340" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:43 IST" name="setup" finished-at="2022-06-03T09:20:49 IST" duration-ms="6702" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ch]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public void com.brillio.test.LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:49 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T09:20:53 IST" duration-ms="3260" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Kign]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[John126]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[English (Indian)]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Invalid username or password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidCredentialTest -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:53 IST" name="teardown" finished-at="2022-06-03T09:20:56 IST" duration-ms="3571" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:20:56 IST" name="setup" finished-at="2022-06-03T09:21:03 IST" duration-ms="6792" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ch]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public void com.brillio.test.LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:21:03 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T09:21:08 IST" duration-ms="5483" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Kign]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[John127]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[English (Indian)]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Invalid username or password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidCredentialTest -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:21:08 IST" name="teardown" finished-at="2022-06-03T09:21:13 IST" duration-ms="4819" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:21:13 IST" name="setup" finished-at="2022-06-03T09:21:21 IST" duration-ms="8167" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ch]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public void com.brillio.test.LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:21:21 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T09:21:26 IST" duration-ms="4334" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Kign]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[John128]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[English (Indian)]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Invalid username or password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidCredentialTest -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:21:26 IST" name="teardown" finished-at="2022-06-03T09:21:28 IST" duration-ms="2563" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:21:28 IST" name="setup" finished-at="2022-06-03T09:21:35 IST" duration-ms="6187" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ch]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public void com.brillio.test.LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:21:35 IST" name="invalidCredentialTest" data-provider="commonDataProvider" finished-at="2022-06-03T09:21:38 IST" duration-ms="3644" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Kign]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[John129]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[English (Indian)]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Invalid username or password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidCredentialTest -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54]" started-at="2022-06-03T09:21:38 IST" name="teardown" finished-at="2022-06-03T09:21:45 IST" duration-ms="7067" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=invalidCredentialTest status=SUCCESS method=LoginTest.invalidCredentialTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.brillio.test.LoginTest@6c1a5b54] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
+        </test-method> <!-- end -->
       </class> <!-- com.brillio.test.LoginTest -->
-    </test> <!-- Open EMR Test - CH -->
-  </suite> <!-- OpenEMR Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
