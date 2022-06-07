@@ -15,19 +15,23 @@ public class PatientTest extends WebDriverWrapper {
 	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider",groups = {"high","patient"})
 	public void addPatientTest(String username,String password,String language,String firstname,String lastname,String dob,String gender,String expectedAlert,String expectedValue)
 	{
-		LoginPage.enterUsername(driver, username);
-		LoginPage.enterPassword(driver, password);
-		LoginPage.selectLanguageByText(driver, language);
-		LoginPage.clickOnLogin(driver);
 		
-		MainPage.clickOnPatient(driver);
-		MainPage.clickOnNewSearch(driver);
+		LoginPage login=new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword( password);
+		login.selectLanguageByText(language);
+		login.clickOnLogin();
 		
-		SearchOrAddPatientPage.selectPatFrame(driver);
-		SearchOrAddPatientPage.enterFirstName(driver, firstname);
+		MainPage main=new MainPage(driver);
+		main.clickOnPatient();
+		main.clickOnNewSearch();
 		
+		SearchOrAddPatientPage sap=new SearchOrAddPatientPage(driver);
 		
-		String actualAlertText=SearchOrAddPatientPage.getAlertTextAndHandleIt(driver);
+		sap.selectPatFrame();
+		sap.enterFirstName(firstname);
+		
+		String actualAlertText=sap.getAlertTextAndHandleIt();
 		
 		//complete remaining steps 
 //		6.	Click on Patient  Click New Search

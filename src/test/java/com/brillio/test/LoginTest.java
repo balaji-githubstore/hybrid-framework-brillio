@@ -14,21 +14,24 @@ public class LoginTest extends WebDriverWrapper {
 	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider",groups = {"high","login"})
 	public void validCredentialTest(String username,String password,String language,String expectedTitle) {
 		
-		LoginPage.enterUsername(driver, username);
+		LoginPage login=new LoginPage(driver);
+		
+		login.enterUsername(username);
 		test.log(Status.INFO, "Enter Username as "+username);
 		
-		LoginPage.enterPassword(driver, password);
+		login.enterPassword( password);
 		test.log(Status.INFO, "Enter Password as "+password);
 		
-		LoginPage.selectLanguageByText(driver, language);
+		login.selectLanguageByText( language);
 		test.log(Status.INFO, "Selected Lanaguage as "+language);
 		
-		LoginPage.clickOnLogin(driver);
+		login.clickOnLogin();
 		test.log(Status.INFO, "Clicked on login ");
 		
-		MainPage.waitForPresenceOfPatientMenu(driver);
+		MainPage main=new MainPage(driver);
+		main.waitForPresenceOfPatientMenu();
 
-		String actualTitle = MainPage.getMainPageTitle(driver);
+		String actualTitle = main.getMainPageTitle();
 		test.log(Status.INFO, "Title is "+actualTitle);
 		
 		Assert.assertEquals(actualTitle, expectedTitle);
@@ -37,12 +40,13 @@ public class LoginTest extends WebDriverWrapper {
 	@Test(dataProviderClass = DataUtils.class,dataProvider = "commonDataProvider",groups = {"low","login"})
 	public void invalidCredentialTest(String username,String password,String language,String expectedError)
 	{
-		LoginPage.enterUsername(driver, username);
-		LoginPage.enterPassword(driver, password);
-		LoginPage.selectLanguageByText(driver, language);
-		LoginPage.clickOnLogin(driver);
+		LoginPage login=new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword( password);
+		login.selectLanguageByText(language);
+		login.clickOnLogin();
 		
-		String actualError=LoginPage.getInvalidErrorMessage(driver);
+		String actualError=login.getInvalidErrorMessage();
 		Assert.assertEquals(actualError, expectedError);
 	}
 	

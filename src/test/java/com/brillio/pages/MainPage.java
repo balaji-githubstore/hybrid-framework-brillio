@@ -9,26 +9,33 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 //handle all the menu - openemr dashboard page
 public class MainPage {
-	private static By patientLocator=By.xpath("//div[text()='Patient']");
-	private static By newSearchLocator=By.xpath("//div[text()='New/Search']");
+	private By patientLocator=By.xpath("//div[text()='Patient']");
+	private By newSearchLocator=By.xpath("//div[text()='New/Search']");
 	
-	public static void waitForPresenceOfPatientMenu(WebDriver driver)
+	private WebDriver driver;
+	
+	public MainPage(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	public void waitForPresenceOfPatientMenu()
 	{
 		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.presenceOfElementLocated(patientLocator));
 	}
 
-	public static String getMainPageTitle(WebDriver driver)
+	public String getMainPageTitle()
 	{
 		return  driver.getTitle();
 	}
 	
-	public static void clickOnPatient(WebDriver driver)
+	public void clickOnPatient()
 	{
 		driver.findElement(patientLocator).click();
 	}
 	
-	public static void clickOnNewSearch(WebDriver driver)
+	public void clickOnNewSearch()
 	{
 		driver.findElement(newSearchLocator).click();
 	}
