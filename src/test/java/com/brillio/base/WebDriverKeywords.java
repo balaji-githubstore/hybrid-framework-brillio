@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class WebDriverKeywords {
 	
-	private WebDriver driver;
+	protected WebDriver driver;
 
 	public WebDriverKeywords(WebDriver driver)
 	{
@@ -31,7 +31,7 @@ public class WebDriverKeywords {
 	
 	public String getTextUsingLocator(By locator)
 	{
-		return driver.findElement(locator).getText().strip();
+		return driver.findElement(locator).getText().trim();
 	}
 
 }

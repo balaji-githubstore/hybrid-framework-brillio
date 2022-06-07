@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OpenEMR Suite">
+
+
+	<parameter name="browser" value="ch"></parameter>
+	<test name="Open EMR Test - CH">
+		<classes>
+			<class name="com.brillio.test.LoginUITest" />
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->

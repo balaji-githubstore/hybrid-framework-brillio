@@ -14,11 +14,11 @@ public class LoginPage extends WebDriverKeywords {
 	private By ackLicCertLocator = By.partialLinkText("Acknowledgments");
 	private By errorLocator = By.xpath("//div[contains(text(),'Invalid')]");
 
-	private WebDriver driver;
+	//private WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		this.driver = driver;
+		//this.driver = driver;
 	}
 
 	public void enterUsername(String username) {
