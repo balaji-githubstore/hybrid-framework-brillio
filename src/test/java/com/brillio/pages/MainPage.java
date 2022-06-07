@@ -7,8 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.brillio.base.WebDriverKeywords;
+
 //handle all the menu - openemr dashboard page
-public class MainPage {
+public class MainPage extends WebDriverKeywords {
 	private By patientLocator=By.xpath("//div[text()='Patient']");
 	private By newSearchLocator=By.xpath("//div[text()='New/Search']");
 	
@@ -16,6 +18,7 @@ public class MainPage {
 	
 	public MainPage(WebDriver driver)
 	{
+		super(driver);
 		this.driver=driver;
 	}
 	
@@ -32,11 +35,11 @@ public class MainPage {
 	
 	public void clickOnPatient()
 	{
-		driver.findElement(patientLocator).click();
+		clickUsingLocator(patientLocator);
 	}
 	
 	public void clickOnNewSearch()
 	{
-		driver.findElement(newSearchLocator).click();
+		clickUsingLocator(newSearchLocator);
 	}
 }

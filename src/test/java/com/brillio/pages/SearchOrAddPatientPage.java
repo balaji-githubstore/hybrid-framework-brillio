@@ -7,13 +7,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchOrAddPatientPage {
+import com.brillio.base.WebDriverKeywords;
+
+public class SearchOrAddPatientPage extends WebDriverKeywords{
 	private By patFrameLocator = By.xpath("//iframe[@name='pat']");
 	private By firstnameLocator = By.id("form_fname");
 
 	private WebDriver driver;
 
 	public SearchOrAddPatientPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 
